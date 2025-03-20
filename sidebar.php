@@ -9,6 +9,6 @@ if (!defined('ABSPATH')) {
     <?php if (is_active_sidebar('sidebar-1')) : ?>
         <?php dynamic_sidebar('sidebar-1'); ?>
     <?php else : ?>
-        <p><?php esc_html_e('No widgets added yet. Go to the Widgets section to add widgets!', 'ShopLet'); ?></p>
+        <p><?php esc_html_e('No widgets added yet. Go to the Widgets section to add widgets!', 'shoplet'); ?></p>
     <?php endif; ?>
 </aside>

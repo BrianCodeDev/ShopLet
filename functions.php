@@ -1,34 +1,26 @@
 <?php
-// Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit;
 }
 
-// Enqueue styles and scripts
 function shoplet_enqueue_scripts() {
     wp_enqueue_style('shoplet-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));
 }
 add_action('wp_enqueue_scripts', 'shoplet_enqueue_scripts');
 
-// Theme setup
 function shoplet_setup() {
-    // Add support for dynamic title tags
     add_theme_support('title-tag');
-
-    // Add support for featured images
     add_theme_support('post-thumbnails');
-
-    // Register a main navigation menu
     register_nav_menus(array(
-        'primary' => __('Primary Menu', 'ShopLet'),
+        'primary' => __('Primary Menu', 'shoplet'),
     ));
+    add_theme_support( 'automatic-feed-links' );
 }
 add_action('after_setup_theme', 'shoplet_setup');
 
-// Register sidebar widget area
 function shoplet_widgets_init() {
     register_sidebar(array(
-        'name'          => __('Sidebar', 'ShopLet'),
+        'name'          => __('Sidebar', 'shoplet'),
         'id'            => 'sidebar-1',
         'before_widget' => '<div class="widget">',
         'after_widget'  => '</div>',
@@ -37,6 +29,7 @@ function shoplet_widgets_init() {
     ));
 }
 add_action('widgets_init', 'shoplet_widgets_init');
+
 function my_theme_enqueue_styles() {
     wp_enqueue_style(
         'bootstrap-css',
@@ -71,9 +64,8 @@ function my_theme_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
-
 function register_my_menu() {
-    register_nav_menu('primary', __('Primary Menu', 'ShopLet'));
+    register_nav_menu('primary', __('Primary Menu', 'shoplet'));
 }
 add_action('after_setup_theme', 'register_my_menu');
 
@@ -88,11 +80,10 @@ function enqueue_font_awesome() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
 
-// Register block styles and patterns for Shoplet theme
 function shoplet_register_block_styles() {
     register_block_style( 'core/paragraph', array(
         'name'  => 'shoplet-custom-style',
-        'label' => __( 'Shoplet Custom Style', 'ShopLet' ),
+        'label' => __( 'Shoplet Custom Style', 'shoplet' ),
     ) );
 }
 add_action( 'init', 'shoplet_register_block_styles' );
@@ -101,13 +92,12 @@ function shoplet_register_block_patterns() {
     register_block_pattern(
         'ShopLet/custom-pattern',
         array(
-            'title'       => __( 'Shoplet Custom Pattern', 'ShopLet' ),
-            'description' => __( 'A custom pattern for the Shoplet theme.', 'ShopLet' ),
-            'content'     => '<!-- wp:paragraph --><p>' . __( 'Here is a custom paragraph block pattern.', 'ShopLet' ) . '</p><!-- /wp:paragraph -->',
+            'title'       => __( 'Shoplet Custom Pattern', 'shoplet' ),
+            'description' => __( 'A custom pattern for the Shoplet theme.', 'shoplet' ),
+            'content'     => '<!-- wp:paragraph --><p>' . __( 'Here is a custom paragraph block pattern.', 'shoplet' ) . '</p><!-- /wp:paragraph -->',
         )
     );
 }
 add_action( 'init', 'shoplet_register_block_patterns' );
 
-// Enable support for block styles
 add_theme_support( 'wp-block-styles' );

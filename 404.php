@@ -10,16 +10,16 @@ get_header(); ?>
     <div class="content-area">
         <article class="post-not-found">
             <header class="entry-header">
-                <h1 class="entry-title"><?php esc_html_e('Oops! That page can’t be found.', 'ShopLet'); ?></h1>
+                <h1 class="entry-title"><?php esc_html_e('Oops! That page can’t be found.', 'shoplet'); ?></h1>
             </header>
 
             <div class="entry-content">
-                <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'ShopLet'); ?></p>
+                <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'shoplet'); ?></p>
                 
                 <?php get_search_form(); ?>
 
-                <p><?php esc_html_e('Or go back to the homepage:', 'ShopLet'); ?></p>
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="button"><?php esc_html_e('Back to Home', 'ShopLet'); ?></a>
+                <p><?php esc_html_e('Or go back to the homepage:', 'shoplet'); ?></p>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="button"><?php esc_html_e('Back to Home', 'shoplet'); ?></a>
             </div>
         </article>
     </div>

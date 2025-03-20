@@ -17,7 +17,7 @@ get_header(); ?>
                         <h1 class="post-title"><?php the_title(); ?></h1>
 
                         <div class="post-meta">
-                            <span><?php esc_html_e('Posted on', 'ShopLet'); ?> <?php the_time('F j, Y'); ?> <?php esc_html_e('by', 'ShopLet'); ?> <?php the_author(); ?></span>
+                            <span><?php esc_html_e('Posted on', 'shoplet'); ?> <?php the_time('F j, Y'); ?> <?php esc_html_e('by', 'shoplet'); ?> <?php the_author(); ?></span>
                         </div>
                     </header>
 
@@ -29,14 +29,24 @@ get_header(); ?>
 
                     <div class="post-content">
                         <?php the_content(); ?>
+
+                        <?php
+                        // Add pagination for multi-page posts
+                        wp_link_pages(array(
+                            'before'      => '<div class="page-links">' . __('Pages:', 'shoplet'),
+                            'after'       => '</div>',
+                            'link_before' => '<span>',
+                            'link_after'  => '</span>',
+                        ));
+                        ?>
                     </div>
 
                     <div class="post-navigation">
                         <?php
                         // Display previous and next post navigation
                         the_post_navigation(array(
-                            'prev_text' => '<span class="screen-reader-text">' . __('Previous Post', 'ShopLet') . '</span><span aria-hidden="true">←</span> <span class="post-title">%title</span>',
-                            'next_text' => '<span class="screen-reader-text">' . __('Next Post', 'ShopLet') . '</span><span aria-hidden="true">→</span> <span class="post-title">%title</span>',
+                            'prev_text' => '<span class="screen-reader-text">' . __('Previous Post', 'shoplet') . '</span><span aria-hidden="true">←</span> <span class="post-title">%title</span>',
+                            'next_text' => '<span class="screen-reader-text">' . __('Next Post', 'shoplet') . '</span><span aria-hidden="true">→</span> <span class="post-title">%title</span>',
                         ));
                         ?>
                     </div>
