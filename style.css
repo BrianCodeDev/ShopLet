@@ -1,0 +1,561 @@
+
+/*
+Theme Name: shoplet
+Author: BrianCodeDev
+Theme URI: https://github.com/BrianCodeDev/ShopLet
+Author URI: https://briancodedev.github.io
+Description: Shoplet is a modern and responsive WooCommerce theme designed to help you create a fully functional online store. With seamless WooCommerce integration, a clean design, and customizable options, Shoplet is perfect for showcasing products and growing your eCommerce business.
+Version: 1.0
+Text Domain: shoplet
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-background, custom-logo, one-column
+Tested up to: 6.2
+Requires PHP: 7.4
+*/
+
+
+/* body styling */
+body {
+    font-family: "Poppins", sans-serif !important;
+}
+/* Navbar Styling */
+.navbar {
+    background-color: #fff;
+    padding: 5px !important;
+    border: 1px solid black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    background: -webkit-linear-gradient(#22B799, #009DFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #000000;
+}
+.navbar-nav {
+    gap: 10px;
+}
+.navbar-nav a {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+    transition: 0.3s ease-in-out !important;
+}
+
+.navbar-nav a:hover,
+.navbar-nav a.active {
+    color: #000000;
+}
+
+/* Navbar Icons */
+.fa-tshirt {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.fa-cart-shopping {
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 15px;
+    transition: 0.3s ease;
+}
+
+.fa-cart-shopping:hover {
+    color: #000000;
+}
+.d-flex {
+    align-items: center;
+}
+/* Navbar Buttons */
+.nav-button {
+    background-color: #698EA5;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: none;
+    margin-left: 10px;
+    transition: 0.3s ease;
+    width: 120px;
+}
+
+.nav-button:hover {
+    background-color: #698EA5;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .fa-cart-shopping {
+        margin-left: 0;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+/* Hero styling */
+.hero {
+    background-color: #000000;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+.hero .hero-display {
+    display: flex;
+    justify-content: space-between;
+}
+.hero .hero-display .hero-one h1 {
+    color: white;
+    font-size: 40px;
+    padding-top: 50px;
+    font-weight: 800;
+}
+.hero .hero-display .hero-one p {
+    color: white;
+    font-size: 25px;
+    width: 80%;
+}
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+}
+.hero-buttons button {
+    background-color: #698EA5;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    margin-left: 10px;
+    transition: 0.3s ease;
+    padding: 8px 25px;
+}
+
+.hero .hero-display .hero-one ul li {
+    color: white;
+    font-size: 25px;
+}
+.hero .hero-display img {
+    position: absolute;
+    right: 0;
+    width: 1000px
+}
+/* introduction styling */
+.introduction-content .intro-display {
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    margin-top: 40px;
+}
+.introduction-content p {
+    width: 70%;
+    font-size: 20px;
+    color: black;
+}
+.introduction-content .intro-display .intro-one h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+.introduction-content .intro-display .intro-two {
+    flex:1;
+}
+.introduction-content .intro-display .intro-two hr {
+    width: 100%;
+    background: black;
+    align-self: center;
+    height: 1px;
+}
+.about-intro {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.about-intro ul {
+    padding-top: 10px;
+}
+.about-intro ul li {
+    font-size: 20px;
+}
+.about-intro .about-one h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    padding-top: 15px;
+}
+.about-intro .about-one h2 {
+    font-size: 20px;
+    color: black;
+    padding-top: 15px;
+}
+/* scrolling up styling */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.scroll-to-top:hover {
+    background-color: darkviolet;
+}
+/* Store styling */
+.store-content .store-display {
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    margin-top: 40px;
+}
+.store-content p {
+    width: 70%;
+    font-size: 20px;
+    color: black;
+}
+.store-content .store-display .store-one h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+.store-content .store-display .store-two {
+    flex:1;
+}
+.store-content .store-display .store-two hr {
+    width: 100%;
+    background: black;
+    align-self: center;
+    height: 1px;
+}
+/* settings styling */
+.settings {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 211, 112);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.settings:hover {
+    background-color: rgb(0, 211, 112);
+}
+/* product styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.product-display {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.product-display a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: left;
+    left: 0;
+    position: absolute;
+
+}
+.product-display i {
+    color: black;
+    font-size: 20px; 
+}
+.product {
+    border: none;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product .price {
+    color: #0073aa;
+    font-weight: bold;
+}
+.tag {
+    background-color: #8756E8;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    top: 35px;
+    right: -25px;
+    transform: skew(-20deg) rotate(45deg) scaleX(1.2);
+    padding: 5px 30px;
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 400px; /* Adjust width */
+    margin: auto;
+    text-align: center;
+}
+.swiper-button-next, .swiper-button-prev {
+    background: #0073aa;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background: #005580;
+}
+/* footer styling */
+footer {
+    background-color: #191919;
+    padding-top: 10px;
+    color: white;
+}
+footer h2 {
+    color: white;
+    font-size: 20px;
+}
+footer .copy-right {
+    background-color: #000000;
+}
+footer .footer-image img {
+    width: 300px;
+}
+footer .copy-right-display {
+    display: flex;
+    justify-content: space-between;
+}
+footer .copy-one ul {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+}
+footer .copy-one ul li {
+  list-style-type: none;
+}
+footer .copy-one ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+footer .copy-two a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+footer .footer-intro {
+    color: white;
+    font-size: 20px;
+}
+footer .category-title {
+    color: white;
+    font-size: 20px;
+}
+footer p a {
+    color: white;
+    font-size: 16px; 
+}
+footer p a:hover {
+    color: rgb(241, 202, 255);
+    font-size: 16px; 
+}
+.footer-product-display a {
+    color: white !important;
+    font-size: 20px;
+}
+.footer-product-display i {
+    color: white !important;
+    font-size: 20px;
+}
+@media only screen and (max-width: 1200px) {
+    .d-flex {
+        justify-content: center;
+        gap: 10px;
+    }
+    .d-flex .nav-button {
+    width: 120px;
+    }
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://shoplet.local/wp-content/uploads/2025/03/wp11379909_1_800.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 30px;
+    }
+    .hero .hero-display {
+        display: flex;
+        justify-content: space-between;
+    }
+    .hero .hero-display .hero-one h1 {
+        color: white;
+        font-size: 20px;
+        padding-top: 50px;
+        font-weight: 800;
+        text-align: center;
+    }
+    .hero .hero-display .hero-one p {
+        color: white;
+        font-size: 15px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .hero-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .hero-buttons button {
+        background-color: #698EA5;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        margin-left: 10px;
+        transition: 0.3s ease;
+        padding: 8px 25px;
+    }
+    .hero .hero-display .hero-one ul {
+        padding-top: 20px;
+    }
+    .hero .hero-display .hero-one ul li {
+        color: white;
+        font-size: 15px;
+    }
+    .hero .hero-display img {
+        display: none;
+    }
+   
+    /* introduction styling */
+    .introduction-content .intro-display .intro-one h1 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .introduction-content p {
+        width: 95%;
+        font-size: 13px;
+        margin: 0 auto;
+        color: black;
+    }
+    .about-intro {
+        display: inline-block;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    /* store styling */
+    .store-display {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .store-one h1 {
+        font-size: 1.5rem;
+      }
+    
+      .store-two hr {
+        width: 50%;
+        margin: 10px auto;
+      }
+    
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+      .product {
+        padding: 15px;
+      }
+    
+      .product-one a {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+      }
+    
+      .product-two i {
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    
+      .store-one h1 {
+        font-size: 1.2rem;
+      }
+    
+      .product {
+        padding: 10px;
+      }
+    
+      .product-one a {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+      }
+    
+      .product-two i {
+        font-size: 1rem;
+      }
+      footer .copy-right-display {
+        display: block;
+        justify-content: space-between;
+    }
+    footer .copy-one ul {
+        display: block;
+        gap: 10px;
+        margin: 0;
+    }
+  }
